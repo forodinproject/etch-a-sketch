@@ -1,0 +1,30 @@
+*,
+::before,
+::after {
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.wrapper {
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+.gridWrapper {
+    box-sizing: content-box;
+    width: 1000px;
+    aspect-ratio: 1;
+    border: 1px solid oklch(0% 0 0);
+}
+
+.flexC {
+    display: flex;
+    flex-direction: column;
+}
+
+.alignCenter {
+    align-items: center;
+    text-align: center;
+}
