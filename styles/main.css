@@ -31,3 +31,8 @@
 .contentBox {
     box-sizing: content-box;
 }
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
