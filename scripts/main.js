@@ -10,14 +10,6 @@ for (let i = 0; i < gridSize ** 2; i++) {
     gridWrapper.appendChild(content);
 
 }
-// let changeColor = document.querySelectorAll('.changeColor')
-
-// for (change of changeColor) {
-//     change.addEventListener('mouseover', () => {
-//         change.style.backgroundColor = 'black';
-//     })
-// }
-
 
 for (let i = 0; i < gridSize ** 2; i++) {
     let changeColor = document.querySelector(`.changeColor${i}`);
