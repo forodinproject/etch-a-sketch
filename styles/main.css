@@ -13,7 +13,7 @@
 }
 
 .gridWrapper {
-    width: 1024px;
+    width: 512px;
     aspect-ratio: 1;
     border: 1px solid oklch(0% 0 0);
 }
