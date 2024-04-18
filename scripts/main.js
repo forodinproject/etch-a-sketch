@@ -3,17 +3,26 @@ let heightOfBox = 512 / gridSize;
 
 const gridWrapper = document.querySelector('.gridWrapper');
 
-for (let i = gridSize ** 2; i * i > 0; i--) {
+for (let i = 0; i < gridSize ** 2; i++) {
     const content = document.createElement('div');
     content.style.cssText = `border: 1px solid black; aspect-ratio: 1 / 1; height: ${heightOfBox}px`;
-    content.classList.add('changeColor')
+    content.classList.add(`changeColor${i}`)
     gridWrapper.appendChild(content);
 
 }
-changeColor = document.querySelectorAll('.changeColor')
+// let changeColor = document.querySelectorAll('.changeColor')
 
-for (change of changeColor) {
-    change.addEventListener('mouseover', () => {
-        change.style.backgroundColor = 'black';
+// for (change of changeColor) {
+//     change.addEventListener('mouseover', () => {
+//         change.style.backgroundColor = 'black';
+//     })
+// }
+
+
+for (let i = 0; i < gridSize ** 2; i++) {
+    let changeColor = document.querySelector(`.changeColor${i}`);
+    changeColor.addEventListener('mouseover', () => {
+        changeColor.style.backgroundColor = 'black';
     })
+
 }
