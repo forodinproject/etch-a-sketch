@@ -12,7 +12,7 @@ for (let i = 0; i < gridSize ** 2; i++) {
     gridWrapper.appendChild(content);
     let changeColor = document.querySelector(`.changeColor${i}`);
     changeColor.addEventListener('mouseover', () => {
-        changeColor.style.backgroundColor = `rgb(${randomColor}, ${randomColor}, ${randomColor})`;
+        changeColor.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
 
     });
 }
