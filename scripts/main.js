@@ -1,25 +1,32 @@
-slider = document.querySelector('.slider');
-let gridSize = slider.value;
-
+let slider = document.querySelector('.slider');
+let gridWrapper = document.querySelector('.gridWrapper');
+let gridSize = slider.value || 16;
 let heightOfBox = 512 / gridSize;
 
-const gridWrapper = document.querySelector('.gridWrapper');
-
-for (let i = 0; i < gridSize ** 2; i++) {
-    const content = document.createElement('div');
-    content.style.cssText = `border: 1px solid black; aspect-ratio: 1 / 1; height: ${heightOfBox}px`;
-    content.classList.add(`changeColor${i}`)
-    gridWrapper.appendChild(content);
-    let changeColor = document.querySelector(`.changeColor${i}`);
-    changeColor.addEventListener('mouseover', () => {
-        changeColor.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
-
-    });
+function createInitialGrid() {
+    for (let i = 0; i < gridSize ** 2; i++) {
+        const content = document.createElement('div');
+        content.style.cssText = `border: 1px solid black; aspect-ratio: 1 / 1; height: ${heightOfBox}px`;
+        gridWrapper.appendChild(content);
+        content.addEventListener('mouseover', () => {
+            content.style.backgroundColor = randomColor();
+        });
+    }
 }
 
 function randomColor() {
-    let randomNum = Math.floor(Math.random() * 255);
-    return randomNum;
+    return `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
 }
 
+function randomNum() {
+    return Math.floor(Math.random() * 255);
+}
 
+createInitialGrid();
+
+slider.addEventListener('input', () => {
+    gridSize = slider.value;
+    heightOfBox = 512 / gridSize;
+    gridWrapper.textContent = '';
+    createInitialGrid();
+})
