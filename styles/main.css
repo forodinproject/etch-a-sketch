@@ -36,3 +36,8 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.autoMargin {
+    max-width: fit-content;
+    margin-inline: auto;
+}
